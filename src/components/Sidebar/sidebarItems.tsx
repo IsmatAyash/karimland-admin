@@ -9,8 +9,6 @@ import {
   MailOutline,
   DynamicFeed,
   ChatBubbleOutline,
-  WorkOutline,
-  Report,
 } from '@mui/icons-material';
 
 export const sidebarItems = [
@@ -27,7 +25,7 @@ export const sidebarItems = [
     id: '2',
     title: 'Quick Menu',
     subItems: [
-      { id: '21', title: 'Users', icon: <PermIdentity />, path: '/' },
+      { id: '21', title: 'Users', icon: <PermIdentity />, path: '/users' },
       { id: '22', title: 'Products', icon: <Storefront />, path: '/' },
       { id: '23', title: 'Transactions', icon: <AttachMoney />, path: '/' },
       { id: '24', title: 'Reports', icon: <BarChart />, path: '/' },

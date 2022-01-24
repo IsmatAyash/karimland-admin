@@ -47,7 +47,9 @@ const FeaturedInfo = () => {
             <FeaturedMoney>${info.money}</FeaturedMoney>
             <FeaturedMoneyRate>
               {info.rate}{' '}
-              <FeaturedIcon negative={info.rate < 0}>{info.icon}</FeaturedIcon>
+              <FeaturedIcon negative={info.rate < 0 ? 'true' : 'false'}>
+                {info.icon}
+              </FeaturedIcon>
             </FeaturedMoneyRate>
           </FeaturedMoneyCtr>
           <FeaturedSub>{info.sub}</FeaturedSub>

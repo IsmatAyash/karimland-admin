@@ -3,6 +3,8 @@ import { HomeCtr, HomeWidgets } from './home.styled';
 import Chart from '../../components/Chart';
 
 import { userData } from '../../data';
+import WidgitSm from '../../components/WidgitSm';
+import WidgetLg from '../../components/WidgetLg';
 
 const Home = () => {
   return (
@@ -16,6 +18,10 @@ const Home = () => {
         grid
         dataKey="Active User"
       />
+      <HomeWidgets>
+        <WidgitSm />
+        <WidgetLg />
+      </HomeWidgets>
     </HomeCtr>
   );
 };

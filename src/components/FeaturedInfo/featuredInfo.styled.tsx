@@ -13,8 +13,8 @@ export const FeaturedItem = styled.div`
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-5);
 `;
 
 export const FeaturedTitle = styled.span`
@@ -38,11 +38,11 @@ export const FeaturedMoneyRate = styled.span`
   margin-left: 20px;
 `;
 
-type IconProp = { negative: boolean };
+type IconProp = { negative: string };
 export const FeaturedIcon = styled(Icon)<IconProp>`
   font-size: 14px;
   margin-left: 5px;
-  color: ${({ negative }) => (negative ? 'red' : 'green')};
+  color: ${({ negative }) => (negative === 'true' ? 'red' : 'green')};
 `;
 
 export const FeaturedSub = styled.span`
