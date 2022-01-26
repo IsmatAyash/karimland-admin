@@ -19,7 +19,7 @@ export const UserAvatar = styled.img`
 `;
 
 export const UserEditBtn = styled.button`
-  bottom: none;
+  border: none;
   border-radius: 10px;
   padding: 5px 10px;
   background-color: var(--green-light);
@@ -31,4 +31,15 @@ export const UserEditBtn = styled.button`
 export const UserDeleteBtn = styled(DeleteOutline)`
   color: #f01616;
   cursor: pointer;
+`;
+
+export const UserAddBtn = styled.button`
+  width: 80px;
+  border: none;
+  padding: 5px;
+  background-color: var(--primary-500);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white);
+  margin-bottom: 20px;
 `;

@@ -26,7 +26,7 @@ export const sidebarItems = [
     title: 'Quick Menu',
     subItems: [
       { id: '21', title: 'Users', icon: <PermIdentity />, path: '/users' },
-      { id: '22', title: 'Products', icon: <Storefront />, path: '/' },
+      { id: '22', title: 'Products', icon: <Storefront />, path: '/products' },
       { id: '23', title: 'Transactions', icon: <AttachMoney />, path: '/' },
       { id: '24', title: 'Reports', icon: <BarChart />, path: '/' },
     ],
