@@ -3,6 +3,8 @@ import { DeleteOutline } from '@mui/icons-material';
 
 export const UserListCtr = styled.div`
   flex: 4;
+  height: 370px;
+  width: 99%;
 `;
 
 export const UserCtr = styled.div`
@@ -20,7 +22,7 @@ export const UserAvatar = styled.img`
 
 export const UserEditBtn = styled.button`
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px 10px;
   background-color: var(--green-light);
   color: var(--white);
@@ -34,12 +36,19 @@ export const UserDeleteBtn = styled(DeleteOutline)`
 `;
 
 export const UserAddBtn = styled.button`
-  width: 80px;
-  border: none;
+  display: flex;
+  gap: 5px;
+  width: 110px;
+  border: 2px solid var(--green-light);
   padding: 5px;
-  background-color: var(--primary-500);
+  /* background-color: var(--primary-500); */
   border-radius: 5px;
   cursor: pointer;
-  color: var(--white);
+  color: var(--grey-900);
   margin-bottom: 20px;
+  align-items: center;
+`;
+
+export const UserAddBtnText = styled.span`
+  font-weight: bold;
 `;
