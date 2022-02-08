@@ -1,10 +1,10 @@
-import FeaturedInfo from '../../components/FeaturedInfo';
+import FeaturedInfo from '../../components/home/FeaturedInfo';
 import { HomeCtr, HomeWidgets } from './home.styled';
-import Chart from '../../components/Chart';
+import Chart from '../../components/common/Chart';
 
 import { userData } from '../../data';
-import WidgitSm from '../../components/WidgitSm';
-import WidgetLg from '../../components/WidgetLg';
+import WidgitSm from '../../components/home/WidgitSm';
+import WidgetLg from '../../components/home/WidgetLg';
 
 const Home = () => {
   return (

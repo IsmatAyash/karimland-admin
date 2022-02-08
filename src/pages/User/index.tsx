@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserCtr } from '../User/user.styled';
-import { userDataType } from '../../utils/dataTypes';
-import UserDetails from '../../components/UserDetails';
-import UserUpdate from '../../components/UserUpdate';
+import { userDataType } from '../../types';
+import UserDetails from '../../components/user/UserDetails';
 import { getUserDataById } from '../../data';
+import NewUser from '../../components/user/NewUser';
+import UserUpdate from '../../components/user/UserUpdate';
 
 const User = () => {
   const [userData, setUserData] = useState<userDataType | null>(null);
@@ -14,12 +15,16 @@ const User = () => {
     if (userId) setUserData(getUserDataById(userId));
   }, [userId]);
 
-  if (!userData) return <h1>Loading...</h1>;
-
   return (
     <UserCtr>
-      <UserDetails {...userData} />
-      <UserUpdate {...userData} />
+      {userData ? (
+        <>
+          <UserDetails {...userData} />
+          <UserUpdate {...userData} />
+        </>
+      ) : (
+        <NewUser />
+      )}
     </UserCtr>
   );
 };

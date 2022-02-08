@@ -15,10 +15,10 @@ import {
   MailOutline,
   PhoneAndroid,
 } from '@mui/icons-material';
-import { userDataType } from '../../utils/dataTypes';
+import { userDataType } from '../../../types';
 
 const UserDetails = ({
-  name,
+  fullName,
   email,
   userType,
   avatar,
@@ -32,9 +32,9 @@ const UserDetails = ({
   return (
     <UserShow>
       <UserShowTop>
-        <UserAvatar src={avatar} alt={`${name}-avatar`} />
+        <UserAvatar src={avatar} alt={`${fullName}-avatar`} />
         <UserShowTopTitle>
-          <UserShowName>{name}</UserShowName>
+          <UserShowName>{fullName}</UserShowName>
           <UserNameSub>{userType}</UserNameSub>
         </UserShowTopTitle>
       </UserShowTop>

@@ -12,26 +12,27 @@ import { userRows } from '../../data';
 import { Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Add } from '@mui/icons-material';
+import { userDataType } from '../../types';
 
 const Users = () => {
-  const [data, setData] = useState(userRows);
+  const [userData, setUserData] = useState<userDataType[]>(userRows);
 
-  useEffect(() => setData(userRows), []);
-  const handleDelete = (id: number) => {
-    setData(data.filter((d) => d.id !== id));
+  useEffect(() => setUserData(userRows), []);
+  const handleDelete = (id: string) => {
+    setUserData(userData.filter((d) => d.id !== id));
   };
 
-  type avatarProp = { avatar: string; name: string };
-  const renderAvatar = ({ avatar, name }: avatarProp) => {
+  type avatarProp = { avatar: string; fullName: string };
+  const renderAvatar = ({ avatar, fullName }: avatarProp) => {
     return (
       <UserCtr>
-        <UserAvatar src={avatar} alt={name} />
-        {name}
+        <UserAvatar src={avatar} alt={fullName} />
+        {fullName}
       </UserCtr>
     );
   };
 
-  type actionsProp = { id: number };
+  type actionsProp = { id: string };
   const renderActions = ({ id }: actionsProp) => {
     return (
       <>
@@ -46,7 +47,7 @@ const Users = () => {
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     {
-      field: 'name',
+      field: 'fullName',
       headerName: 'User',
       width: 150,
       renderCell: (params: any) => renderAvatar(params.row),
@@ -74,14 +75,14 @@ const Users = () => {
       </Link>
       <DataGrid
         style={{ width: '99%' }}
-        rows={data}
+        rows={userData}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
       />
-      <Outlet />
+      <Outlet context={{ userData, setUserData }} />
       {/* <Outlet context={userRow} /> */}
     </UserListCtr>
   );

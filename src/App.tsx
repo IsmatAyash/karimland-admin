@@ -6,9 +6,9 @@ import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import Users from './pages/Users';
 import User from './pages/User';
-import NewUser from './pages/NewUser';
 import Products from './pages/Products';
-import NoMatch from './components/NoMatch';
+import Product from './pages/Product';
+import NoMatch from './components/common/NoMatch';
 
 function App() {
   return (
@@ -20,11 +20,12 @@ function App() {
         <Routes>
           <Route path="users" element={<Users />}>
             <Route path=":userId" element={<User />} />
-            <Route path="newUser" element={<NewUser />} />
+            <Route path="newUser" element={<User />} />
           </Route>
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:productId" element={<Products />} />
-          <Route path="/newProduct" element={<Products />} />
+          <Route path="products" element={<Products />}>
+            <Route path=":productId" element={<Product />} />
+            <Route path="newProduct" element={<Product />} />
+          </Route>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
