@@ -12,9 +12,10 @@ import {
   ProductFormLeft,
   ProductFormRight,
 } from './productUpdate.styled';
+import FomrFieldArray from '../../common/FormFieldArray';
 
 const ProductUpdate = (productData: productDataType) => {
-  const { image, title } = productData;
+  const { image, title, description } = productData;
   const cols = getProductCols(productData);
   return (
     <Container>
@@ -32,9 +33,17 @@ const ProductUpdate = (productData: productDataType) => {
             <FormFileUpload image={image} alt={`${title}-image`} name="image" />
           </ProductFormLeft>
           <ProductFormRight>
-            {cols.map((col) => (
-              <FomrField key={col.key} name={col.name} title={col.label} />
-            ))}
+            {cols.map((col) => {
+              return col.name === 'description' ? (
+                <FomrFieldArray
+                  key={col.key}
+                  description={description}
+                  title={col.label}
+                />
+              ) : (
+                <FomrField key={col.key} name={col.name} title={col.label} />
+              );
+            })}
             <SubmitButton title="Update Product" />
           </ProductFormRight>
         </ProductForm>
